@@ -1,6 +1,7 @@
 #include "nrf24L01.h"
 #include "spi.h"
 #include "main.h"
+#include "usart.h"
 
 const uint8_t TX_ADDRESS[TX_ADR_WIDTH]={0x34,0x43,0x10,0x10,0x01}; //发送地址
 const uint8_t RX_ADDRESS[RX_ADR_WIDTH]={0x34,0x43,0x10,0x10,0x01}; //接收地址

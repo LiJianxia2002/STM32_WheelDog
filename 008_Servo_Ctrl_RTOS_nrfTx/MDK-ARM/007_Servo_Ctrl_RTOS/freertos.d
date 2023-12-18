@@ -33,6 +33,7 @@
 007_servo_ctrl_rtos\freertos.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h
 007_servo_ctrl_rtos\freertos.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
 007_servo_ctrl_rtos\freertos.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
+007_servo_ctrl_rtos\freertos.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h
 007_servo_ctrl_rtos\freertos.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
 007_servo_ctrl_rtos\freertos.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h
 007_servo_ctrl_rtos\freertos.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
@@ -48,3 +49,6 @@
 007_servo_ctrl_rtos\freertos.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 007_servo_ctrl_rtos\freertos.o: ../Core/Inc/nrf24l01.h
 007_servo_ctrl_rtos\freertos.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+007_servo_ctrl_rtos\freertos.o: ../Core/Inc/mpu6050.h
+007_servo_ctrl_rtos\freertos.o: ../Core/Inc/control.h
+007_servo_ctrl_rtos\freertos.o: ../Core/Inc/filter.h

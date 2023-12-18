@@ -28,6 +28,8 @@
 #include "servo.h"
 #include "nrf24l01.h"
 #include "string.h"
+#include "mpu6050.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -37,7 +39,11 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-
+void CLAMP(int16_t* const num,int16_t min,int16_t max)
+{
+	if(*num>max) *num=max;
+	if(*num<min) *num=min;
+}
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -50,12 +56,13 @@ typedef struct{
 	uint8_t button;
 	int16_t pitch;
 	int16_t yaw;
-	uint8_t servos[12];
-	uint8_t reserve[10];
+	uint8_t servos[14];
+	uint8_t reserve[8];
 	
 }remote_Rx_t ;
 
 remote_Rx_t remote;
+
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
@@ -175,8 +182,10 @@ void Start_UART_Task(void const * argument)
   /* Infinite loop */
   for(;;)
   {
+		GetMpuData();
+		AngleCalculate();
 		
-    osDelay(1);
+    osDelay(5);
   }
   /* USER CODE END Start_UART_Task */
 }
@@ -191,15 +200,36 @@ void Start_UART_Task(void const * argument)
 void Start_Servo_Task(void const * argument)
 {
   /* USER CODE BEGIN Start_Servo_Task */
+	uint8_t origin[14]={0x30,0x90,0x90,0x90,0x90,0x90,0x90,0x90,0x90,0x90,0x90,0x90,0x90,0x31};
+	memcpy(remote.servos,origin,14);
   /* Infinite loop */
   for(;;)
   {
 		static uint8_t i;
-		//测试用
-		remote.yaw++;
-		remote.pitch+=10;
+		static int16_t last_yaw;
+		int16_t tmp_yaw=0;
+		int16_t tmp_pitch=0;
+		static float delta_pitch,last_pitch;
+		//
+		remote.yaw=(int16_t)g_fCarAngle_yaw; //陀螺仪控制串口舵机数据
+//		remote.pitch=(int16_t)g_fCarAngle_pitch;
+//		
+//		delta_pitch=(g_fCarAngle_pitch-last_pitch)*3;
 		
+//		if(delta_pitch<2&&delta_pitch>-2)
+//			delta_pitch=0.01;
 		
+		tmp_yaw=(uint8_t)remote.servos[1]+(remote.yaw-last_yaw)*4;
+		tmp_pitch=90+(int16_t)(g_fCarAngle_pitch)*3;
+		
+		CLAMP(&tmp_yaw,0,180);
+		CLAMP(&tmp_pitch,0,180);
+		
+		remote.servos[1]=tmp_yaw;
+		remote.servos[2]=tmp_pitch;
+		
+		last_yaw=remote.yaw;
+		//
 		memcpy(tmp_buf,&remote,sizeof(tmp_buf));
 		
 		if(NRF24L01_TxPacket(tmp_buf)==TX_OK)
@@ -207,7 +237,7 @@ void Start_Servo_Task(void const * argument)
       printf("NRF24L01无线模块数据发送成功：\r\n");
 			for(i=0;i<33;i++)
 				printf("%u ",tmp_buf[i]);
-			printf("\r\n"); //串口打印接收到的数据
+			printf("\r\n"); //串口打印的数据
 			
     }
     else

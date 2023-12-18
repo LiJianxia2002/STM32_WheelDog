@@ -19,6 +19,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "cmsis_os.h"
+#include "i2c.h"
 #include "spi.h"
 #include "tim.h"
 #include "usart.h"
@@ -28,6 +29,8 @@
 /* USER CODE BEGIN Includes */
 #include <servo.h>
 #include <nrf24l01.h>
+#include "mpu6050.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -94,13 +97,18 @@ int main(void)
   MX_TIM2_Init();
   MX_USART1_UART_Init();
   MX_SPI2_Init();
+  MX_I2C2_Init();
   /* USER CODE BEGIN 2 */
 	Servo_init();
 	
 	NRF24L01_Init();
 	
 	NRF24L01_TX_Mode();
-
+	
+		while(MPU_Init())
+	{
+	}
+	
 	
 	HAL_TIM_PWM_Start (&htim2,TIM_CHANNEL_1);
 	HAL_TIM_PWM_Start (&htim2,TIM_CHANNEL_2);

@@ -50,8 +50,8 @@ typedef struct{
 	uint8_t button;
 	int16_t pitch;
 	int16_t yaw;
-	uint8_t servos[12];
-	uint8_t reserve[10];
+	uint8_t servos[14];
+	uint8_t reserve[8];
 	
 }remote_Rx_t ;
 

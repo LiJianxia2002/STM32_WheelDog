@@ -37,10 +37,20 @@ compiling servo.c...
 ..\Core\Src\servo.c(67): warning:  #1-D: last line of file ends without a newline
   }
 ..\Core\Src\servo.c: 4 warnings, 0 errors
+compiling freertos.c...
+../Core/Inc/servo.h(8): warning:  #1295-D: Deprecated declaration Servo_calc - give arg types
+  void Servo_calc();
+../Core/Inc/servo.h(9): warning:  #1295-D: Deprecated declaration Servo_data_rec - give arg types
+  void Servo_data_rec();
+../Core/Inc/servo.h(10): warning:  #1295-D: Deprecated declaration Servo_init - give arg types
+  void Servo_init();
+../Core/Inc/nrf24l01.h(101): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Core/Src/freertos.c: 4 warnings, 0 errors
 linking...
 Program Size: Code=14008 RO-data=456 RW-data=140 ZI-data=5356  
 FromELF: creating hex file...
-"007_Servo_Ctrl_RTOS\007_Servo_Ctrl_RTOS.axf" - 0 Error(s), 4 Warning(s).
+"007_Servo_Ctrl_RTOS\007_Servo_Ctrl_RTOS.axf" - 0 Error(s), 8 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -63,7 +73,7 @@ Package Vendor: Keil
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:5.2.0
-Build Time Elapsed:  00:00:01
+Build Time Elapsed:  00:00:02
 </pre>
 </body>
 </html>

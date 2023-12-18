@@ -23,6 +23,7 @@
 007_servo_ctrl_rtos\stm32f1xx_hal_tim.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h
 007_servo_ctrl_rtos\stm32f1xx_hal_tim.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
 007_servo_ctrl_rtos\stm32f1xx_hal_tim.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
+007_servo_ctrl_rtos\stm32f1xx_hal_tim.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h
 007_servo_ctrl_rtos\stm32f1xx_hal_tim.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
 007_servo_ctrl_rtos\stm32f1xx_hal_tim.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h
 007_servo_ctrl_rtos\stm32f1xx_hal_tim.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h

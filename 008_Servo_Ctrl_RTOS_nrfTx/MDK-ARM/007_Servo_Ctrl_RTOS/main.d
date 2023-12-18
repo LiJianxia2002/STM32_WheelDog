@@ -24,6 +24,7 @@
 007_servo_ctrl_rtos\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h
 007_servo_ctrl_rtos\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
 007_servo_ctrl_rtos\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
+007_servo_ctrl_rtos\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h
 007_servo_ctrl_rtos\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
 007_servo_ctrl_rtos\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h
 007_servo_ctrl_rtos\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
@@ -43,10 +44,14 @@
 007_servo_ctrl_rtos\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 007_servo_ctrl_rtos\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 007_servo_ctrl_rtos\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
+007_servo_ctrl_rtos\main.o: ../Core/Inc/i2c.h
 007_servo_ctrl_rtos\main.o: ../Core/Inc/spi.h
 007_servo_ctrl_rtos\main.o: ../Core/Inc/tim.h
 007_servo_ctrl_rtos\main.o: ../Core/Inc/usart.h
+007_servo_ctrl_rtos\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 007_servo_ctrl_rtos\main.o: ../Core/Inc/gpio.h
 007_servo_ctrl_rtos\main.o: ../Core/Inc/servo.h
-007_servo_ctrl_rtos\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 007_servo_ctrl_rtos\main.o: ../Core/Inc/nrf24l01.h
+007_servo_ctrl_rtos\main.o: ../Core/Inc/mpu6050.h
+007_servo_ctrl_rtos\main.o: ../Core/Inc/control.h
+007_servo_ctrl_rtos\main.o: ../Core/Inc/filter.h

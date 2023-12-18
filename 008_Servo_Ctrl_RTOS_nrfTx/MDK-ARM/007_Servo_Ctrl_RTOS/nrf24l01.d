@@ -26,8 +26,11 @@
 007_servo_ctrl_rtos\nrf24l01.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h
 007_servo_ctrl_rtos\nrf24l01.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
 007_servo_ctrl_rtos\nrf24l01.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
+007_servo_ctrl_rtos\nrf24l01.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h
 007_servo_ctrl_rtos\nrf24l01.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
 007_servo_ctrl_rtos\nrf24l01.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h
 007_servo_ctrl_rtos\nrf24l01.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 007_servo_ctrl_rtos\nrf24l01.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
 007_servo_ctrl_rtos\nrf24l01.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
+007_servo_ctrl_rtos\nrf24l01.o: ../Core/Inc/usart.h
+007_servo_ctrl_rtos\nrf24l01.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
